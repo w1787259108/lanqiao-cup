@@ -1,0 +1,31 @@
+C51 COMPILER V9.59.0.0   DIDIDI                                                            01/29/2021 10:25:29 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE DIDIDI
+OBJECT MODULE PLACED IN .\Objects\dididi.obj
+COMPILER INVOKED BY: F:\keil\C51\BIN\C51.EXE dididi.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\didid
+                    -i.lst) TABS(2) OBJECT(.\Objects\dididi.obj)
+
+line level    source
+
+   1          #include <STC15F2K60S2.H>
+   2          void main()
+   3          {
+   4   1        P2=0xA0;P0=0x00;P2=0x80;P0=0xFF;//1010 0000 0000 0000 1000 0000 11111111 
+   5   1        P2=0xBF;
+   6   1        P0=0x10;//8421 Y5=1 5=101 1011 1111 0xbf P0= 01000000
+   7   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     19    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

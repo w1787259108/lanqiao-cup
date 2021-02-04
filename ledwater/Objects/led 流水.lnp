@@ -1,0 +1,3 @@
+".\Objects\ledwater.obj" 
+TO ".\Objects\led 流水" 
+PRINT(".\Listings\led 流水.m51") RAMSIZE(256) 

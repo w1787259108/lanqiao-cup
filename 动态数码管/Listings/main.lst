@@ -1,0 +1,90 @@
+C51 COMPILER V9.59.0.0   MAIN                                                              02/02/2021 22:44:17 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: F:\keil\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main.ls
+                    -t) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <STC15F2K60S2.H>
+   2          #include <intrins.h>
+   3          typedef unsigned long uint32;
+   4          typedef unsigned int uint16;
+   5          typedef unsigned char uint8;
+   6          
+   7          void closebuzzer();
+   8          void display();
+   9          void Delay1000ms();
+  10          void xxxdispro();
+  11          
+  12          
+  13          uint8 dp[8];//œ‘ æª∫≥Â«¯
+  14          
+  15          const uint8 dm[]={0xc0,0xf9,0xa4,0xb0,0x99,0x92,0x82,0x80,0x90,0x88,
+  16                            0x83,0xc6,0xa1,0x86,0x8e};
+  17          
+  18                        
+  19          void main()
+  20          {
+  21   1        closebuzzer();
+  22   1        while(1)
+  23   1        {
+  24   2            xxxdispro();
+  25   2            display();
+  26   2        }
+  27   1      }
+  28          
+  29          
+  30          
+  31          void xxxdispro()
+  32          {
+  33   1        dp[0]=dm[5];
+  34   1        dp[1]=dm[0];
+  35   1        dp[2]=dm[4];
+  36   1        dp[3]=dm[9];
+  37   1        dp[4]=dm[4];
+  38   1        dp[5]=dm[4];
+  39   1        dp[6]=dm[3];
+  40   1        dp[7]=0xff;
+  41   1      }
+  42          
+  43          void display()
+  44          {
+  45   1        P2=0x9f;//1001 1111 100 y4
+  46   1        P0=0xff;//1111 1111
+  47   1        P2=0xdf;//1101 1111 101 y6
+  48   1        P0=0xff;//0000 0001
+  49   1        P2=0xff;//1111 1111 111 y7
+  50   1        P0=dm[num];//œ‘ æ
+*** ERROR C202 IN LINE 50 OF main.c: 'num': undefined identifier
+  51   1      }
+  52          
+  53          void closebuzzer()
+C51 COMPILER V9.59.0.0   MAIN                                                              02/02/2021 22:44:17 PAGE 2   
+
+  54          {
+  55   1        P2=0xBF;
+  56   1        P0=0x00;
+  57   1      }
+  58          
+  59          void Delay1000ms()    //@11.0592MHz
+  60          {
+  61   1        unsigned char i, j, k;
+  62   1      
+  63   1        _nop_();
+  64   1        _nop_();
+  65   1        i = 43;
+  66   1        j = 6;
+  67   1        k = 203;
+  68   1        do
+  69   1        {
+  70   2          do
+  71   2          {
+  72   3            while (--k);
+  73   3          } while (--j);
+  74   2        } while (--i);
+  75   1      }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  1 ERROR(S)
